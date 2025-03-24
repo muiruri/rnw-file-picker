@@ -1,5 +1,5 @@
 import RNWFilePicker from './NativeRNWFilePicker';
 
-export function multiply(a: number, b: number): number {
-  return RNWFilePicker.multiply(a, b);
+export function pickFile(types: string[], destFolder: string): Promise<Object> {
+  return RNWFilePicker.pickFile(types, destFolder);
 }

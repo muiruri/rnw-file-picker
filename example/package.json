@@ -7,11 +7,13 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "build:android": "react-native build-android --extra-params \"--no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a\"",
-    "build:ios": "react-native build-ios --scheme RNWFilePickerExample --mode Debug --extra-params \"-sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO\""
+    "build:ios": "react-native build-ios --scheme RNWFilePickerExample --mode Debug --extra-params \"-sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO\"",
+    "windows": "npx @react-native-community/cli run-windows"
   },
   "dependencies": {
-    "react": "19.0.0",
-    "react-native": "0.78.1"
+    "react": "18.3.1",
+    "react-native": "0.76.7",
+    "react-native-windows": "0.76.8"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -23,9 +25,17 @@
     "@react-native/babel-preset": "0.78.1",
     "@react-native/metro-config": "0.78.1",
     "@react-native/typescript-config": "0.78.1",
+    "metro-config": "^0.81.3",
     "react-native-builder-bob": "^0.36.0"
   },
   "engines": {
     "node": ">=18"
+  },
+  "react-native-windows": {
+    "init-windows": {
+      "name": "RnwFilePickerExample",
+      "namespace": "RnwFilePickerExample",
+      "template": "old/uwp-cpp-app"
+    }
   }
 }
