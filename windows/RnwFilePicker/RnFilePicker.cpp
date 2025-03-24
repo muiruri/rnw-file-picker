@@ -85,8 +85,6 @@ namespace winrt::RnFilePicker {
       const uint64_t size = props.Size();
       response["size"] = size;
       response["mimeType"] = to_string(file.ContentType());
-      // response["base64"] = to_string(base64Content);
-      destFolder = ApplicationData::Current().LocalFolder().Path();
       if (!destFolder.empty()) {
         StorageFolder copyToFolder{ co_await StorageFolder::GetFolderFromPathAsync(destFolder) };
         co_await file.CopyAsync(copyToFolder, file.Name(), NameCollisionOption::ReplaceExisting);
