@@ -20,8 +20,7 @@
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
+    "windows",
     "cpp",
     "*.podspec",
     "react-native.config.js",

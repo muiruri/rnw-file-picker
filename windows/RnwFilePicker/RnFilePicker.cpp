@@ -81,10 +81,10 @@ namespace winrt::RnFilePicker {
       BasicProperties props = co_await file.GetBasicPropertiesAsync();
       
       response["uri"] = to_string(file.Path());
-      response["Name"] = to_string(file.Name());
+      response["name"] = to_string(file.Name());
       const uint64_t size = props.Size();
       response["size"] = size;
-      response["mimeType"] = to_string(file.ContentType());
+      response["type"] = to_string(file.ContentType());
       if (!destFolder.empty()) {
         StorageFolder copyToFolder{ co_await StorageFolder::GetFolderFromPathAsync(destFolder) };
         co_await file.CopyAsync(copyToFolder, file.Name(), NameCollisionOption::ReplaceExisting);
